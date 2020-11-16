@@ -1,6 +1,8 @@
 PEDESTRIAN_WALK_SPEED_MPH = 3
-PEDESTRIANS_PER_HOUR_RANGE = range(1, 10800)
-CARS_PER_HOUR_PER_LANE_RANGE = range(1, 3600)
+PEDESTRIANS_PER_HOUR_RANGE = range(1, 10800)  # 6 usages
+PEDESTRIANS_PER_HOUR_INCREMENT = 1.097322
+CARS_PER_HOUR_PER_LANE_RANGE = range(1, 3600)  # 12 usages
+CARS_PER_LANE_HOUR_INCREMENT = 1.085333
 CAR_LANE_WIDTH_FT = 11
 CROSSWALK_WIDTH_FT = 6
 CAR_TURN_SPEED_MPH = 12.5
@@ -8,16 +10,23 @@ CAR_LENGTH = 15
 PEDESTRIAN_LENGTH = 1
 MINIMUM_LIGHT_CYCLE_SEC = 3
 MONTE_CARLO_SIMULATION_SEC = 24 * 60 * 60
-NUM_LANES_RANGE = range(0, 2)
-LPI_RANGE = range(0, 5)
+NUM_LANES_RANGE = range(0, 2)  # 16 usages
+LPI_RANGE = range(0, 5)  # 4 usages
 FEET_PER_MILE = 5280
 SECONDS_PER_HOUR = 3600
 YELLOW_LIGHT_SEC = 3
 GREEN_LIGHT_DELAY_SEC = 1
-EXISTENCE_RANGE = [True, False]
-LIGHT_CYCLE_RANGE = range(0, 120)
-MIN_DELAY_AFTER_DETECT_RANGE = range(0, 15)
+EXISTENCE_RANGE = [True, False]  # 41 usages
+LIGHT_CYCLE_RANGE = range(0, 120)  # 16 usages
+MIN_DELAY_AFTER_DETECT_RANGE = range(0, 15)  # 16 usages
 
+# 10000^6 = 1x10^24
+# 3600^12 = 4.738x10^42 = 4.738x10^66
+# 3^16 = 4.305x10^7 = 2.04x10^74
+# 6^4 = 1.296x10^3 = 2.643x10^77
+# 2^41 = 2.199x10^12 = 5.813x10^89
+# 121^16 = 2.111x10^33 = 1.227x10^123
+# 16^16 = 1.845x10^19 = 2.264x10^142 => there are this many possible configurations of intersection and traffic volume
 
 # Potential concepts to consider:
 # Dedicated pedestrian signal (part of cycle once)
